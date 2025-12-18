@@ -275,10 +275,10 @@
 
         const airplaneMaterial = new THREE.SpriteMaterial({
             map: airplaneTexture,
-            transparent: true,
-            depthWrite: false
+            transparent: false,
+            opacity: 1
         });
-
+        
         const airplanes = [];
 
         for (let i = 0; i < 25; i++) {
@@ -449,6 +449,7 @@
 
 
 </html>
+
 
 
 
