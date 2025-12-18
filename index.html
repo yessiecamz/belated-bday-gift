@@ -270,12 +270,8 @@
         camera.position.z = 30;
 
         // Airplane Sprite Background
-        const loader = new THREE.TextureLoader();
-        const airplaneTexture = loader.load('airplane.png');
-
         const airplaneMaterial = new THREE.SpriteMaterial({
-            map: airplaneTexture,
-            transparent: true
+            color: 0x0000ff
         });
 
         const airplanes = [];
@@ -448,6 +444,7 @@
 
 
 </html>
+
 
 
 
