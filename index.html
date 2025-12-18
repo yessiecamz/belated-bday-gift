@@ -270,8 +270,13 @@
         camera.position.z = 30;
 
         // Airplane Sprite Background
+        const loader = new THREE.TextureLoader();
+        const airplaneTexture = loader.load('airplane.png');
+
         const airplaneMaterial = new THREE.SpriteMaterial({
-            color: 0x0000ff
+            map: airplaneTexture,
+            transparent: true,
+            depthWrite: false
         });
 
         const airplanes = [];
@@ -286,7 +291,7 @@
             );
 
             const scale = Math.random() * 3 + 2;
-            airplane.scale.set(scale, scale, 1);
+            airplane.scale.set(4, 4, 1);
 
             airplane.userData = {
                 speedX: Math.random() * 0.01 - 0.005,
@@ -444,6 +449,7 @@
 
 
 </html>
+
 
 
 
