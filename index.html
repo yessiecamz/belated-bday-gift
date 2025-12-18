@@ -273,16 +273,16 @@
         const loader = new THREE.TextureLoader();
         const airplaneTexture = loader.load('./airplane.png');
 
-        const airplaneMaterial = new THREE.SpriteMaterial({
+        const airplaneMaterial = new THREE.MeshBasicMaterial({
             map: airplaneTexture,
-            transparent: false,
-            opacity: 1
+            transparent: true
         });
-        
+
+        const airplaneGeometry = new THREE.PlaneGeometry(6, 6);
         const airplanes = [];
 
         for (let i = 0; i < 25; i++) {
-            const airplane = new THREE.Sprite(airplaneMaterial);
+            const airplane = new THREE.Mesh(airplaneGeometry, airplaneMaterial);
 
             airplane.position.set(
                 (Math.random() - 0.5) * 50,
@@ -290,18 +290,16 @@
                 (Math.random() - 0.5) * 50
             );
 
-            const scale = Math.random() * 3 + 2;
-            airplane.scale.set(4, 4, 1);
-
             airplane.userData = {
-                speedX: Math.random() * 0.01 - 0.005,
-                speedY: Math.random() * 0.01 - 0.005,
+                speedX: Math.random() * 0.02 - 0.01,
+                speedY: Math.random() * 0.02 - 0.01,
                 rotationSpeed: Math.random() * 0.02
             };
 
-            scene.add(airplane);
-            airplanes.push(airplane);
-        }
+    scene.add(airplane);
+    airplanes.push(airplane);
+}
+        
         // Add lights
         const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
         scene.add(ambientLight);
@@ -449,6 +447,7 @@
 
 
 </html>
+
 
 
 
