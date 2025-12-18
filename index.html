@@ -425,14 +425,14 @@
             }, 600);
 
             // Make hearts float up from the background
-            hearts.forEach(heart => {
-                gsap.to(heart.position, {
-                    y: heart.position.y - 30,
+            airplanes.forEach(plane => {
+                gsap.to(plane.position, {
+                    y: plane.position.y - 30,
                     duration: 3,
                     ease: "power1.out"
                 });
 
-                gsap.to(heart.material, {
+                gsap.to(plane.material, {
                     opacity: 0,
                     duration: 3,
                     ease: "power1.out"
@@ -447,6 +447,7 @@
 
 
 </html>
+
 
 
 
